@@ -25,7 +25,7 @@
 #   missing or obviously invalid.
 # ----------------------------------------------------------------------
 scraper_defaults:
-  contact_email: "your-reachable-email@example.com"
+  contact_email: "jjbarrett22@gmail.com"
   user_agent_template: "jobs-aggregator/1.0 (personal use; {email})"
 
 sources:
@@ -116,7 +116,7 @@ sources:
   # Start narrow; scale up after you see the signal.
   # --------------------------------------------------------------------
   apify_linkedin:
-    enabled: true
+    enabled: false
     actor_id: "bebity~linkedin-jobs-scraper"
     ssm_token_param: "apify_token"
     count_per_search: 50
@@ -130,15 +130,39 @@ sources:
     #   2. Copy the URL.
     #   3. Paste it as `url`.
     # Common filter params (documented inline):
-    #   f_TPR=r86400      posted in last 24h (3600=1h, 604800=7d)
-    #   f_E=4,5,6         experience level (4=Mid-Senior, 5=Director, 6=Executive)
-    #   f_WT=1,2,3        workplace (1=on-site, 2=remote, 3=hybrid)
-    #   geoId=103644278   United States (broad)
-    #   geoId=103743442   Austin, Texas metro
+    #f_TPR=r86400 — posted within the last 24 hours, keeping results fresh
+    #f_WT=2 — remote only
+    #f_WT=3 — hybrid (for Seattle-area searches where you'd consider in-office)
+    #f_JT=C — contract roles only (used on the contract search)
+    #geoId=103644278 — United States (for remote searches)
+    #geoId=101812870 — Seattle metropolitan area (for hybrid searches)
     searches:
-      - name: "staff_backend_remote_us"
-        url: "https://www.linkedin.com/jobs/search/?keywords=%22staff%20engineer%22%20OR%20%22principal%20engineer%22&f_TPR=r86400&f_WT=2&geoId=103644278"
-      - name: "platform_engineer_austin"
-        url: "https://www.linkedin.com/jobs/search/?keywords=%22platform%20engineer%22%20OR%20%22infrastructure%20engineer%22&f_TPR=r86400&geoId=103743442"
-      - name: "distributed_systems_senior"
-        url: "https://www.linkedin.com/jobs/search/?keywords=%22distributed%20systems%22%20senior&f_TPR=r86400&f_WT=2&geoId=103644278"
+  - name: "principal_pm_remote_us"
+    url: "https://www.linkedin.com/jobs/search/?keywords=%22principal%20product%20manager%22%20OR%20%22staff%20product%20manager%22&f_TPR=r86400&f_WT=2&geoId=103644278"
+
+  - name: "senior_pm_seattle_hybrid"
+    url: "https://www.linkedin.com/jobs/search/?keywords=%22senior%20product%20manager%22%20OR%20%22director%20product%20management%22&f_TPR=r86400&f_WT=3&geoId=101812870"
+
+  - name: "technical_pm_mobile_remote"
+    url: "https://www.linkedin.com/jobs/search/?keywords=%22technical%20product%20manager%22%20OR%20%22PM-T%22%20mobile&f_TPR=r86400&f_WT=2&geoId=103644278"
+
+  - name: "ecommerce_pm_seattle"
+    url: "https://www.linkedin.com/jobs/search/?keywords=%22product%20manager%22%20ecommerce%20OR%20%22purchase%20experience%22%20OR%20%22checkout%22&f_TPR=r86400&f_WT=3&geoId=101812870"
+
+  - name: "consumer_mobile_pm_remote"
+    url: "https://www.linkedin.com/jobs/search/?keywords=%22product%20manager%22%20%22consumer%20mobile%22%20OR%20%22mobile%20platform%22%20OR%20%22mobile-first%22&f_TPR=r86400&f_WT=2&geoId=103644278"
+
+  - name: "digital_banking_pm_seattle"
+    url: "https://www.linkedin.com/jobs/search/?keywords=%22product%20manager%22%20%22digital%20banking%22%20OR%20%22mobile%20banking%22%20OR%20%22fintech%22&f_TPR=r86400&f_WT=3&geoId=101812870"
+
+  - name: "pm_contract_remote_us"
+    url: "https://www.linkedin.com/jobs/search/?keywords=%22product%20manager%22%20OR%20%22product%20owner%22%20contract&f_TPR=r86400&f_WT=2&f_JT=C&geoId=103644278"
+
+  - name: "head_of_product_seattle"
+    url: "https://www.linkedin.com/jobs/search/?keywords=%22head%20of%20product%22%20OR%20%22VP%20product%22%20OR%20%22director%20of%20product%22&f_TPR=r86400&f_WT=3&geoId=101812870"
+
+  - name: "regulated_industry_pm_remote"
+    url: "https://www.linkedin.com/jobs/search/?keywords=%22product%20manager%22%20%22regulated%22%20OR%20%22compliance%22%20OR%20%22privacy%22%20platform&f_TPR=r86400&f_WT=2&geoId=103644278"
+
+  - name: "marketplace_platform_pm_remote"
+    url: "https://www.linkedin.com/jobs/search/?keywords=%22product%20manager%22%20%22marketplace%22%20OR%20%22catalog%22%20OR%20%22taxonomy%22%20OR%20%22seller%20experience%22&f_TPR=r86400&f_WT=2&geoId=103644278"
