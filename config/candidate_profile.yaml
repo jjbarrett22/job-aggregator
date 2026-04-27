@@ -141,47 +141,129 @@ JJ is a professionally trained classical musician and often plays in community o
 # these anchors controls the quality of every score the tool produces.
 # =====================================================================
 calibration_anchors:
-  - title: "Staff Software Engineer, Platform Infrastructure"
-    company: "Stripe"
+  - title: "Senior Product Manager – Digital"
+    company: "BECU"
     summary: >
-      Remote-US. Python + Go distributed systems. Leading the next-gen
-      event-streaming platform. Partner with product eng across the
-      company. IC ladder, staff+ scope, clear senior-staff promo path.
-    expected_score: 93
-    rationale: "Dream company, exact role family, ideal remote posture."
+      Hybrid Tukwila WA (≤3 days/wk). Mobile-first digital banking
+      roadmap ownership. Vendor selection and RFP management. Cross-
+      functional partnership with Fraud, Cybersecurity, Payments, and
+      Marketing. Member-centered culture, purpose-driven credit union.
+      $156K–$191K target range. Active application; warm intro via
+      Nikole Fargher (shared Nordstrom tenure).
+    expected_score: 91
+    rationale: >
+      Near-perfect role fit: eCommerce platform ownership, RFP
+      experience, regulated environment, fraud/payments partnership,
+      mobile-first scope. Hybrid in Seattle metro is viable. Warm
+      personal connection from Nordstrom overlap. Only drag is no
+      direct financial services background.
 
-  - title: "Senior Software Engineer, Fraud Systems"
-    company: "a mid-stage fintech"
+  - title: "Principal Product Manager, Mobile Growth"
+    company: "Redfin"
     summary: >
-      Hybrid Austin (3 days/wk). Python + Postgres. Owning fraud ML
-      pipeline. Staff-adjacent scope but titled Senior.
-    expected_score: 74
-    rationale: "Great match on stack + city; senior-not-staff title is
-      the only drag."
+      Seattle WA hybrid. Leading product strategy and roadmap to grow
+      the Redfin mobile app audience and engagement. Owns cross-
+      functional delivery, experimentation, and data analysis with
+      engineering and design teams.
+    expected_score: 85
+    rationale: >
+      Consumer mobile product ownership with data-driven growth focus
+      maps directly to Nordstrom eCommerce and Amazon Leo experience.
+      Seattle hybrid is ideal. Public company with strong product
+      culture. Slight drag on direct real estate domain knowledge.
 
-  - title: "Engineering Manager, Platform"
-    company: "a late-stage SaaS"
+  - title: "Staff Product Manager, Taxonomy & Catalog"
+    company: "Etsy"
     summary: >
-      Managing a 6-person platform team. Budget, hiring, performance
-      reviews, stakeholder reporting. Limited IC time.
-    expected_score: 28
-    rationale: "Alex explicitly does not want the manager ladder right now."
+      100% remote, EST schedule. Contract W2 via The Mom Project through
+      December 2026. Owns global taxonomy, catalog data models, listing
+      enrichment systems, and platform capabilities powering Search,
+      Ads, and Buyer Experience. Requires structured data and
+      information architecture experience. $98.36/hr.
+    expected_score: 72
+    rationale: >
+      Strong personal passion fit and marketplace PM experience from
+      Premise Data. eCommerce and catalog context from Nordstrom is
+      adjacent. 100% remote and contract structure are positives. Score
+      held back by the hard requirement for taxonomy and information
+      architecture depth — a genuine technical gap to address in
+      application materials.
 
-  - title: "Founding Engineer"
-    company: "a Series A AI infra startup"
+  - title: "Associate Director, Product Management – Rx and Vet Diet"
+    company: "Chewy"
     summary: >
-      NYC on-site, 5 days/wk. Rust + Kubernetes. Equity-heavy package,
-      modest base. Expectation of 60+ hour weeks through launch.
-    expected_score: 22
-    rationale: "On-site outside Austin + crunch expectation + Rust-
-      required — three strong negatives offset the interesting problem."
+      Hybrid Bellevue WA, 3-4 days/wk. Owns pharmacy and vet diet
+      purchase experience roadmap. Partners with Design, Engineering,
+      Finance, and Data Science. Data-driven purchase funnel
+      optimization. $166K–$265K. Active application.
+    expected_score: 78
+    rationale: >
+      eCommerce purchase funnel and checkout experience from Nordstrom
+      maps strongly. Bellevue hybrid is viable. High comp ceiling.
+      Score held back by 3-4 days in office being toward the heavy end,
+      pharmacy/healthcare domain gap, and no direct Chewy-specific
+      marketplace experience.
 
-  - title: "Principal Software Engineer, Developer Experience"
-    company: "HashiCorp"
+  - title: "IT Product Owner, Principal – Head of Product Mobile App"
+    company: "PG&E (via recruiter)"
     summary: >
-      Remote-US. Go-first. Defining the next generation of CLI tooling
-      across Terraform / Vault / Consul. Independent scope, cross-org
-      influence.
-    expected_score: 88
-    rationale: "Exact kind of role Alex wants to grow into; principal-
-      title is a slight stretch but the scope is right."
+      Remote with Oakland onsite 2 days/month. Contract 12+ months,
+      $110–$125/hr W2. Owns product vision, strategy, and delivery for
+      a first-of-its-kind utility consumer mobile app. Executive
+      influence, hands-on delivery, zero-to-one build. Active
+      application.
+    expected_score: 68
+    rationale: >
+      Strong match on mobile app ownership, zero-to-one delivery,
+      executive alignment, and consumer digital experience. Contract
+      structure and rate are acceptable. Score held back by hard energy/
+      utility domain gap (DER, AMI 2.0, grid-edge), and the role
+      requires domain expertise that is genuinely absent. Personal
+      interest in energy/climate partially offsets.
+
+  - title: "Senior Product Manager, Advertising Data Platforms Compliance"
+    company: "Warner Bros. Discovery / HBO Max"
+    summary: >
+      Hybrid Burbank CA or remote. Owns privacy-preserving advertising
+      workflows including data clean rooms, first-party data onboarding,
+      identity matching, and attribution. Reports to Sr. Director of
+      Privacy, Data Product Compliance. $119K–$221K. Active application.
+    expected_score: 61
+    rationale: >
+      Former employer with deep brand familiarity and CCPA/ADA/WCAG
+      compliance pedigree from HBO tenure. Strong cross-functional
+      partnership and regulatory roadmap experience. Score held back by
+      hard requirement for 2+ years in digital ads ecosystem and data
+      clean room experience — genuine gaps. Burbank location also
+      requires confirming remote eligibility.
+
+  - title: "Capability Product Manager III"
+    company: "Premera Blue Cross"
+    summary: >
+      Hybrid Mountlake Terrace WA, 3 days/wk. Enterprise product
+      ownership for internal capability platforms. Partners with
+      business stakeholders and technology teams. Mentors Product
+      Owners. $112K–$190K. Active application.
+    expected_score: 55
+    rationale: >
+      Mountlake Terrace hybrid is viable. Enterprise stakeholder
+      management and Agile/SAFe experience map well. Score held back
+      by internal capability platform scope being lower visibility than
+      consumer-facing roles, no direct healthcare experience, and comp
+      target being at the lower end of range. Role is a solid fit but
+      not an energizing one.
+
+  - title: "VP of Product"
+    company: "a Series A startup"
+    summary: >
+      On-site San Francisco, 5 days/wk. People management of 8 PMs.
+      Budget ownership, hiring, performance reviews. Early-stage;
+      expectation of defining process from scratch. Equity-heavy,
+      modest base below $160K.
+    expected_score: 14
+    rationale: >
+      On-site outside Seattle metro is an automatic hard-no. Base below
+      walk-away threshold. People management-only scope at this stage
+      is undesirable. Early-stage chaos without established PM
+      discipline is a poor fit. Four compounding negatives with no
+      offsetting positives.
