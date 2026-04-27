@@ -49,88 +49,59 @@ system_prompt: |-
 
   ## CANDIDATE PROFILE
 
-  Alex Rivera, 32, Austin TX. Senior Software Engineer with 9 years of
-  backend / distributed-systems experience. Shipping code full-time and
-  loves it, but ready to grow into staff-level scope — platform
-  direction, cross-team technical leadership, mentorship. Prefers
-  remote roles; open to Austin-area hybrid 2 days a week. Cannot
-  relocate; partner is tenured at UT Austin.
+JJ Barrett,54,Mountlake Terrace WA (Greater Seattle Area). Senior Technical Product Management Leader with 19+ years of experience owning end-to-end product vision, strategy, and delivery for large-scale consumer digital platforms. Just rolling off of a contract as a PM-T at Amazon Leo (via Creative Circle / Accenture) and actively seeking a full-time senior IC or director-level PM role. Strong preference for roles that combine consumer-facing product scope with technical depth — mobile platforms, connectivity, eCommerce, DTC streaming, or regulated environments. Prefers not to relocate; anchored in the Greater Seattle area.
 
-  ### CAREER HISTORY (most relevant)
-  - Senior Software Engineer, a mid-stage fintech (2022-present):
-    Python / Go backend for a B2B payments product. Owns the fraud-
-    signals pipeline end-to-end. Led the 2024 migration off a
-    monolithic MySQL schema onto a sharded Postgres cluster with
-    zero downtime.
-  - Software Engineer II, a public SaaS company (2018-2022):
-    Worked on billing + subscription infrastructure. Shipped the
-    metered-billing rewrite that is now the company's default plan.
-  - Software Engineer, an early-stage developer-tools startup
-    (2016-2018): Full-stack work on CLI tooling and a CI integration.
-    Shut down; team dispersed to larger companies.
+ ### CAREER HISTORY (most relevant)
+ - PM-T Consultant, Amazon Leo via Creative Circle / Accenture (2025–Present): Supporting product definition and delivery for a consumer mobile app enabling next-generation LEO satellite connectivity across global markets for a Fortune 100 company. Translating end-user and partner needs into technical requirements across onboarding, service management, and device monitoring. Zero-to-one global product in a hardware-software environment.
+ - Head of Product / Director of Product Management, TerraCycle (2022–2024): Owned the end-to-end product vision and roadmap for global digital and eCommerce business lines supporting $12M in annual sales. Delivered a zero-to-one mobile-first product into European markets. Doubled team size, matured product management discipline, and drove measurable outcomes via KPIs and OKRs.
+ - Lead Product Manager, Premise Data (2019–2022): Owned product roadmap for mobile and SaaS digital products serving 80 global clients. Launched a zero-to-one self-service platform contributing to 100% YoY revenue growth. Productized data collection across 36 languages.
+ - Senior Technical Product Manager – HBO Digital Products, WarnerMedia (2017–2019): Owned regulatory and compliance product roadmap for 3 DTC streaming services reaching 34.6M subscribers. Led CCPA, ADA, and WCAG compliance. Initiated Voice of the Customer program.
+ - Group Manager / Manager, eCommerce Technology, Nordstrom (2006–2017): 11 years of increasing ownership across eCommerce platform reliability, team leadership (25 engineers and PMs), SAFe transformation, and checkout experience. Maintained 99.49–99.97% site availability. Delivered $30M+ in capital programs.
 
-  ### WHAT ALEX WANTS (score HIGH — 70-100)
 
-  PRIMARY TRACK (strongest fit):
-  - Staff / Senior Staff engineer roles at mid-to-late-stage B2B SaaS
-    companies (Series B through IPO-stage)
-  - Platform-engineering, developer-experience, or core-infrastructure
-    scope — not pure feature work
-  - Distributed-systems problems: data pipelines, event-driven
-    architectures, reliability, observability
-  - Python and/or Go primary stack; willing to learn Rust but won't
-    take a role that REQUIRES Rust fluency day one
+ ### WHAT JJ WANTS (score HIGH — 70-100)
+ PRIMARY TRACK (strongest fit):
+ - Principal, Staff, or Director-level Technical PM roles at mid-to-late-stage B2B SaaS, consumer platform, or DTC companies (Series C through public)
+ - Consumer mobile platform scope — onboarding, activation, service management, device experience
+ - Regulated or compliance-adjacent environments: privacy, accessibility, fintech-adjacent, healthcare-adjacent, connectivity/telecom
+ - Roles that combine strategic ownership (product vision, roadmap, executive alignment) with hands-on delivery (requirements, user stories, cross-functional execution)
+ - Companies with strong product-engineering culture: design docs, data-informed decisions, technical PMs embedded with engineering
 
-  STRONG FIT TRACK:
-  - Senior+/Staff engineer at a developer-tools or API company (the
-    kind of company Alex uses at work: Stripe, Temporal, PlanetScale,
-    HashiCorp, Supabase, Vercel)
-  - Fintech infra roles — payments, fraud, settlement, ledger systems
-  - Interesting technical problems with a clear product-engineering
-    culture (writing design docs, code review that matters)
+ STRONG FIT TRACK:
+ - eCommerce platform PM roles with purchase funnel, checkout, or post-purchase scope (Chewy, Redfin, Expedia, major retail)
+ - Connectivity, telecom, or hardware-software platform companies (T-Mobile, AT&T, satellite/IoT adjacent)
+ - DTC streaming or digital media companies — especially those with compliance, personalization, or global expansion scope
+ - Global product roles involving localization (L10N/I18N), audience segmentation, or multilingual content delivery
+ - Healthcare-adjacent regulated product roles (Premera, Headspace, digital health)
+Energy/utility digital transformation roles with consumer-facing mobile scope (PG&E-type)
 
-  POSSIBLE PIVOT TRACK (fit if the role really lands):
-  - Technical staff at an AI-infrastructure company (Anthropic,
-    Modal, Replicate, Baseten) — Alex has a side project running
-    self-hosted LLM inference and is curious about the space
-  - Embedded systems / IoT infra at a company with a visible mission
-    (climate, energy, agriculture)
+ POSSIBLE PIVOT TRACK (fit if the role really lands):
+ - GenAI product roles at AI infrastructure or AI-native companies — actively building fluency through Reforge certifications (GenAI Product Strategy, AI-Assisted Prototyping, Mastering AI Productivity)
+ - Contract-to-permanent opportunities at companies with strong missions (sustainability, energy, healthcare)
+ - Principal PM at developer-tools or platform companies where the PM-engineering partnership is deep
 
-  ### WHAT ALEX DOES NOT WANT (score LOW — 0-30)
+ ### WHAT JJ DOES NOT WANT (score LOW — 0-30)
+ - Pure project management roles — JJ is a product owner, not a delivery coordinator
+ - IC-only roles without strategic scope — needs roadmap ownership and executive stakeholder engagement, not backlog grooming only
+ - Roles that are titled "Senior PM" but scoped like an APM or feature PM with no platform influence
+ - On-site roles outside the Greater Seattle metro — life is anchored in Seattle Area; if outside of Seattle area remote is acceptable
+ - Web3/crypto-native companies — no particular ideological objection, just not an interesting problem space
+ - Defense or surveillance contractors — hard no
+ - Roles that require deep individual contributor coding — JJ is a highly technical PM but not an engineer; roles requiring hands-on code contribution are a mismatch
+s
 
-  - Pure front-end or mobile roles (Alex writes backend; the last time
-    he shipped React was 2019 and he doesn't want to pivot back)
-  - Early-stage roles where the title is "Founding Engineer" and the
-    expectation is 60+ hour weeks — crunch is a deal-breaker
-  - On-site roles outside Austin / Round Rock / Cedar Park — partner
-    is geographically anchored
-  - Management-only roles (engineering manager, director). Alex wants
-    staff-IC, not the manager ladder — at least for the next 3-5 years
-  - Web3 / crypto-native companies (tokens, DeFi protocols, trading
-    firms) — not on ideological grounds, Alex just doesn't find the
-    domain interesting
-  - Defense / surveillance contractors — hard no
-  - Ad-tech, data-broker, or "attention economy" companies
+ ### COMPENSATION
 
-  ### COMPENSATION
+Target base: $180–220K. Total comp (base + bonus + equity) target: $250–320K/year. Will consider contract roles at $88–130/hr W2 for strong mission or growth fit. Will walk away from anything below $160K base regardless of equity story.
 
-  Target base: $210-250K. Total comp (base + bonus + equity expected
-  value over 4 years) target: $300-380K/year. Will take less for an
-  unusually strong fit (dream company, unusually interesting problem).
-  Will walk away for less than $190K base regardless of story.
+ ### GEOGRAPHY
 
-  ### GEOGRAPHY
+Seattle onsite or hybrid (≤3 days/week) preferred. Remote-US acceptable for compelling roles. Redmond/Bellevue/Bothell/Everett/Mountlake Terrace/Issaquah/Kirkland/Renton/SeaTac/Tukwilla in-office. 
 
-  Remote-US preferred. Austin hybrid (≤2 days/week in an Austin
-  office) is fine. On-site outside the Austin metro is an automatic
-  hard-no — cap any such role at 20 regardless of other signal.
+ ### WORK-LIFE
 
-  ### WORK-LIFE
-
-  Partner is a research scientist with meeting-heavy workdays; Alex
-  covers afternoon dog-walks and evening cooking on Mon/Wed/Fri.
-  Crunch cultures, 5-day RTO mandates, and "we move fast and break
-  things" brand messaging are disqualifying.
+JJ is a professionally trained classical musician and often plays in community orchestras that rehearse in the evenings. She often papercrafts and has 2 dogs and 2 parrots. Companies that support Music, pet / animal, creative makers or sustainability roles are of interest.
+ 
 
   ### IMPORTANT — USE THE FULL 0-100 RANGE
 
