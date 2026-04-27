@@ -49,87 +49,147 @@ companies:
   # Tier S — Dream companies
   # ======================================================================
 
-  - name: "Stripe"
-    name_normalized: "stripe"
-    tier: "S"
-    ats: greenhouse
-    ats_slug: "stripe"
+   - name: "Amazon"
+   name_normalized: "amazon"
+   tier: "S"
+   ats: amazon
+   ats_url: "https://www.amazon.jobs"
+   notes: "Current contract employer via Leo. Strong internal referral potential. Target PM-T and Senior PM roles in devices, connectivity, or consumer platforms."
+ 
+ - name: "Netflix"
+   name_normalized: "netflix"
+   tier: "S"
+   ats: netflix
+   ats_url: "https://jobs.netflix.com"
+   notes: "DTC streaming pedigree from WarnerMedia/HBO is directly relevant. Target Senior/Principal PM roles in consumer experience or platform."
 
-  - name: "HashiCorp"
-    name_normalized: "hashicorp"
-    tier: "S"
-    ats: greenhouse
-    ats_slug: "hashicorp"
+ - name: "Salesforce"
+   name_normalized: "salesforce"
+   tier: "2"
+   ats: workday
+   ats_url: "https://www.salesforce.com/company/careers/"
+   notes: "Strong SaaS PM background from Premise Data. Target Senior/Principal PM roles in platform, self-service, or customer success product areas."
 
-  - name: "Anthropic"
-    name_normalized: "anthropic"
-    tier: "S"
-    ats: greenhouse
-    ats_slug: "anthropic"
+ - name: "Expedia"
+   name_normalized: "expedia"
+   tier: "1"
+   ats: workday
+   ats_url: "https://expedia.wd108.myworkdayjobs.com/"
+   notes: "Principal PM Self-Service identified as strong match. Premise Data self-service platform and 80% wait time reduction directly relevant."
+ 
+ # ======================================================================
+ # Tier 1 — Primary targets
+ # ======================================================================
 
-  # ======================================================================
-  # Tier 1 — Primary targets
-  # ======================================================================
+- name: "T-Mobile"
+   name_normalized: "tmobile"
+   tier: "1"
+   ats: workday
+   ats_url: "https://careers.t-mobile.com"
+   notes: "Active job search. Connectivity/telecom directly maps to Amazon Leo experience. Senior PM and Principal PM roles in digital and consumer mobile."
+ 
+ - name: "Microsoft"
+   name_normalized: "microsoft"
+   tier: "S"
+   ats: icims
+   ats_slug: "microsoft"
+   notes: "Principal PM roles across Copilot, consumer mobile, and platform teams. Strong match for mobile/AI product scope."
+ 
+ - name: "Warner Bros. Discovery"
+   name_normalized: "warnerbros"
+   tier: "1"
+   ats: workday
+   ats_url: "https://careers.wbd.com"
+   notes: "Former employer (WarnerMedia/HBO). Active application: Senior PM Advertising Data Platforms Compliance. Internal network advantage."
+ 
+ - name: "Chewy"
+   name_normalized: "chewy"
+   tier: "1"
+   ats: workday
+   ats_url: "https://careers.chewy.com"
+   notes: "Active application: AD Product Management Rx and Vet Diet. eCommerce and checkout experience from Nordstrom maps strongly. Bellevue HQ — hybrid viable."
+ 
+ - name: "Nordstrom"
+   name_normalized: "nordstrom"
+   tier: "1"
+   ats: workday
+   ats_url: "https://careers.nordstrom.com"
+   notes: "11 years tenure; deep internal network. Strong rehire candidate for senior eCommerce or platform PM roles."
 
-  - name: "Shopify"
-    name_normalized: "shopify"
-    tier: "1"
-    ats: greenhouse
-    ats_slug: "shopify"
+  - name: "AT&T"
+   name_normalized: "att"
+   tier: "2"
+   ats: workday
+   ats_url: "https://www.att.jobs"
+   notes: "Active application: Senior Tech Product Manager, Bothell WA. SAFe, SDLC, REST API/microservices exposure embedded in resume. Partial tool stack gap (no Azure DevOps, no Adobe Analytics)."
+ 
+ - name: "Alaska Airlines"
+   name_normalized: "alaskaairlines"
+   tier: "2"
+   ats: icims
+   ats_url: "https://careers.alaskaair.com"
+   notes: "Seattle HQ. Consumer digital and mobile platform roles. Reliability and eCommerce platform experience from Nordstrom is relevant."
 
-  - name: "Notion"
-    name_normalized: "notion"
-    tier: "1"
-    ats: greenhouse
-    ats_slug: "notion"
+ - name: "Redfin"
+   name_normalized: "redfin"
+   tier: "1"
+   ats: workday
+   ats_url: "https://www.redfin.com/careers"
+   notes: "Principal PM Platform Engineering and Mobile Growth roles identified. eCommerce and platform reliability experience maps well."
+ 
+ - name: "Starbucks"
+   name_normalized: "starbucks"
+   tier: "2"
+   ats: starbucks
+   ats_url: "https://www.starbucks.com/careers"
+   notes: "Seattle HQ. Consumer mobile app and loyalty platform scope. Mobile-first and eCommerce experience maps to digital ordering and rewards platform PM roles."
+ 
+ # ======================================================================
+ # Tier 2 — Secondary targets
+ # ====================================================================== 
 
-  - name: "Linear"
-    name_normalized: "linear"
-    tier: "1"
-    ats: ashby
-    ats_slug: "linear"
+ - name: "Disney"
+   name_normalized: "disney"
+   tier: "3"
+   ats: workday
+   ats_url: "https://jobs.disneycareers.com"
+   notes: "DTC streaming (Disney+) and consumer mobile scope. WarnerMedia/HBO experience is directly analogous."
+ 
+ - name: "Google"
+   name_normalized: "google"
+   tier: "3"
+   ats: google
+   ats_url: "https://careers.google.com"
+   notes: "Large matrixed organization. Target consumer mobile, connectivity, or platform PM roles. Competitive process — prioritize after Tier 1/2."
+ 
+ # ======================================================================
+ # Tier 3 — Possible pivot / stretch targets
+ # ======================================================================
 
-  - name: "Vercel"
-    name_normalized: "vercel"
-    tier: "1"
-    ats: greenhouse
-    ats_slug: "vercel"
+  - name: "Premera Blue Cross"
+   name_normalized: "premera"
+   tier: "1"
+   ats: workday
+   ats_url: "https://careers.premera.com"
+   notes: "Active application: Capability Product Manager III. Mountlake Terrace HQ — hybrid viable. Regulated environment and enterprise stakeholder experience maps well."
+ 
+ - name: "Okta"
+   name_normalized: "okta"
+   tier: "2"
+   ats: greenhouse
+   ats_slug: "okta"
+   notes: "Principal PM Login (Bellevue) identified as strong match. CCPA/ADA/WCAG compliance experience and WarnerMedia authentication work maps directly."
 
-  - name: "Supabase"
-    name_normalized: "supabase"
-    tier: "1"
-    ats: ashby
-    ats_slug: "supabase"
+- name: "Blue Origin"
+   name_normalized: "blueorigin"
+   tier: "3"
+   ats: greenhouse
+   ats_slug: "blueorigin"
+   notes: "Seattle HQ. Principal Technical PM roles identified. Hardware-software systems and regulated environment experience from Amazon Leo is relevant. Mission-driven fit."
 
-  # ======================================================================
-  # Tier 2 — Secondary targets
-  # ======================================================================
-
-  - name: "Databricks"
-    name_normalized: "databricks"
-    tier: "2"
-    ats: greenhouse
-    ats_slug: "databricks"
-
-  - name: "Snowflake"
-    name_normalized: "snowflake"
-    tier: "2"
-    ats: workday
-    ats_slug: "snowflake"
-    workday:
-      base_url: "https://snowflake.wd1.myworkdayjobs.com"
-      tenant:   "snowflake"
-      site:     "Snowflake_Careers"
-      max_jobs: 250
-
-  - name: "Temporal"
-    name_normalized: "temporal"
-    tier: "2"
-    ats: lever
-    ats_slug: "temporal"
-
-  - name: "PlanetScale"
-    name_normalized: "planetscale"
-    tier: "2"
-    ats: ashby
-    ats_slug: "planetscale"
+- name: "Boeing"
+   name_normalized: "boeing"
+   tier: "3"
+   ats: workday
+   ats_url: "https://jobs.boeing.com"
+   notes: "Seattle HQ. Regulated environment and technical PM experience is relevant. Hardware-software systems angle from Amazon Leo could open doors. Mission and culture fit to verify."
