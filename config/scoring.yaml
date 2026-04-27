@@ -1,106 +1,121 @@
 # =====================================================================
-# EXAMPLE scoring.yaml — generic starter template.
+# scoring.yaml — JJ Barrett job search pipeline configuration.
 #
-# This file controls the algorithmic pre-filter and score modifiers
-# that run before Claude Haiku sees each job. In the pipeline,
-# the algo layer is a BINARY PREFILTER — if any hard gate triggers the
-# job is dropped; otherwise it proceeds to Haiku for ranking.
+# Controls the algorithmic pre-filter and score modifiers that run
+# before Claude sees each job. Hard gates are BINARY — if triggered
+# the job is dropped. Everything else flows to Claude for ranking.
 #
-# Copy this file to `config/scoring.yaml` and tune to your preferences.
-# See docs/USER_CONFIG.md §2 for a section-by-section walkthrough.
-#
-# KEEP THESE STRUCTURAL KEYS (the loaders + tests depend on them):
+# KEEP THESE STRUCTURAL KEYS:
 #   weights, keywords, industry_buckets, gates, modifiers, tiers,
 #   semantic, location, static_lists
-#
-# The values below encode preferences for the example persona (Alex
-# Rivera — senior-to-staff backend engineer in Austin, targeting SaaS
-# / developer-tools / fintech). Replace every value with your own.
 # =====================================================================
 
 # --------------------------------------------------------------------
 # weights — MUST sum to 1.0
-# How much each scoring dimension contributes to the algo score. For
-# the pipeline the weighted algo score is only used as a soft
-# tiebreaker between close Haiku scores; the primary signal is Haiku.
 # --------------------------------------------------------------------
 weights:
-  role_fit:              0.22
-  industry_alignment:    0.18
-  geographic:            0.14
-  compensation:          0.14
-  work_life_quality:     0.12
-  passion_identity:      0.06
-  cultural_alignment:    0.06
-  company_health:        0.04
-  career_trajectory:     0.04
-  engagement_type:       0.00
+  role_fit:              0.24   # title + scope alignment is primary signal
+  industry_alignment:    0.16   # sector fit matters but JJ spans many
+  geographic:            0.16   # Seattle anchor is a hard constraint
+  compensation:          0.14   # strong floor but not the sole driver
+  work_life_quality:     0.12   # hybrid days, crunch culture, pace
+  passion_identity:      0.08   # maker identity, ecommerce, mission fit
+  cultural_alignment:    0.06   # member-first, outcome-focused cultures
+  company_health:        0.02   # stage and funding stability
+  career_trajectory:     0.02   # growth path visibility
+  engagement_type:       0.00   # FTE vs contract handled by tracks
 
 # --------------------------------------------------------------------
-# keywords — substring matchers used across the category scorers.
-# Every list below is personal vocabulary for the target persona.
-# Extend or replace freely. All matching is case-insensitive.
+# keywords — substring matchers used across category scorers.
+# All matching is case-insensitive.
 # --------------------------------------------------------------------
 keywords:
 
   # Role-fit POSITIVE — titles / phrases that signal the right kind
-  # of role for Alex (senior-to-staff backend / platform).
-  senior_ic:
-    - "staff engineer"
-    - "staff software engineer"
-    - "senior staff engineer"
-    - "principal engineer"
-    - "principal software engineer"
-    - "senior software engineer"
-    - "senior backend engineer"
-    - "platform engineer"
-    - "infrastructure engineer"
-    - "distributed systems"
-    - "site reliability engineer"
-    - "sre"
-    - "developer experience"
-    - "dx engineer"
-    - "devex"
+  # of PM role for JJ.
+  target_titles:
+    - "principal product manager"
+    - "staff product manager"
+    - "senior product manager"
+    - "sr. product manager"
+    - "sr product manager"
+    - "director of product"
+    - "director product management"
+    - "head of product"
+    - "technical product manager"
+    - "product manager technical"
+    - "pm-t"
+    - "group product manager"
+    - "associate director product"
+    - "capability product manager"
+    - "senior product owner"
+    - "principal product owner"
 
-  core_tech:
-    - "python"
-    - "golang"
-    - " go "
-    - "postgres"
-    - "postgresql"
-    - "kafka"
-    - "event-driven"
+  # Scope signals — phrases that indicate the right kind of work.
+  scope_signals:
+    - "product vision"
+    - "product strategy"
+    - "product roadmap"
+    - "mobile-first"
+    - "consumer mobile"
+    - "mobile platform"
+    - "ecommerce"
+    - "e-commerce"
+    - "purchase experience"
+    - "checkout"
+    - "customer journey"
+    - "zero to one"
+    - "0 to 1"
+    - "first-to-market"
+    - "end-to-end"
+    - "cross-functional"
+    - "vendor selection"
+    - "rfp"
+    - "digital banking"
+    - "member experience"
+    - "digital adoption"
+    - "voice of the customer"
+    - "executive alignment"
+    - "regulated environment"
+    - "compliance"
+    - "localization"
+    - "l10n"
+    - "i18n"
+    - "personalization"
+    - "self-service platform"
+
+  # Technical fluency signals — JJ can speak to these credibly.
+  technical_signals:
+    - "rest api"
     - "microservices"
-    - "kubernetes"
-    - "k8s"
-    - "grpc"
-    - "terraform"
-    - "observability"
-    - "grafana"
-    - "prometheus"
+    - "agile"
+    - "scrum"
+    - "safe"
+    - "scaled agile"
+    - "sdlc"
+    - "user stories"
+    - "acceptance criteria"
+    - "backlog"
+    - "okr"
+    - "kpi"
+    - "a/b test"
+    - "experimentation"
+    - "analytics"
+    - "data-driven"
 
-  # Role-fit NEGATIVE — disqualify or down-score
+  # Role-fit NEGATIVE — management-only ladder (JJ wants IC PM scope).
   mgmt_ladder:
     - "engineering manager"
     - "director of engineering"
     - "head of engineering"
     - "vp of engineering"
     - "people manager"
-    - "manage a team"
+    - "manage a team of engineers"
     - "budget ownership"
     - "performance reviews"
+    - "hiring manager"
 
-  frontend_heavy:
-    - "front-end engineer"
-    - "frontend engineer"
-    - "react native"
-    - "ios engineer"
-    - "android engineer"
-    - "mobile engineer"
-    - "ui engineer"
-
-  # Hard disqualifiers (any appearance in title or tight summary =
-  # drop immediately).
+  # Hard disqualifiers — drop immediately if found in title.
   seniority_disqualifiers:
     - "intern"
     - "internship"
@@ -110,6 +125,21 @@ keywords:
     - "new graduate"
     - "apprentice"
     - "junior"
+    - "associate product manager"
+    - "apm"
+
+  # Domain disqualifiers — industries JJ has no interest in.
+  domain_disqualifiers:
+    - "web3"
+    - "crypto"
+    - "blockchain"
+    - "defi"
+    - "nft"
+    - "defense contractor"
+    - "surveillance"
+    - "ad tech"
+    - "data broker"
+    - "attention economy"
 
   # Crunch-culture red flags (soft penalty in work_life_quality).
   crunch_flags:
@@ -118,157 +148,297 @@ keywords:
     - "hustle culture"
     - "work hard play hard"
     - "founding engineer"
+    - "founding pm"
     - "24/7 on-call"
     - "always-on"
     - "move fast and break things"
+    - "wear many hats"
+    - "startup pace"
+    - "5-day rto"
+    - "five days in office"
+
+  # Passion signals — phrases that connect to JJ's identity and interests.
+  passion_signals:
+    - "maker"
+    - "marketplace"
+    - "seller experience"
+    - "buyer experience"
+    - "catalog"
+    - "taxonomy"
+    - "craft"
+    - "handmade"
+    - "sustainability"
+    - "recycling"
+    - "mission driven"
+    - "people helping people"
+    - "mental health"
+    - "community"
+    - "generative ai"
+    - "genai"
+    - "conversational ai"
 
 # --------------------------------------------------------------------
 # industry_buckets — bucket scores (0-10) for broad sector alignment.
-# Higher = more desirable for the candidate.
+# Higher = more desirable for JJ.
 # --------------------------------------------------------------------
 industry_buckets:
-  dev_tools:         10
-  developer_tools:   10
-  saas_b2b:           9
-  fintech:            9
-  cloud_infra:        9
-  data_infra:         8
-  ai_infra:           8
-  enterprise:         6
-  consumer_saas:      5
-  ecommerce:          4
-  healthcare_tech:    4
-  crypto:             0
-  web3:               0
-  adtech:             1
-  gaming:             5
+  ecommerce:               10
+  consumer_mobile:         10
+  dtc_streaming:            9
+  digital_banking_fintech:  9
+  healthcare_wellness:      8
+  sustainability_mission:   8
+  saas_b2b:                 7
+  enterprise_regulated:     7
+  ai_genai:                 7
+  travel_hospitality:       6
+  energy_utility:           5   # domain gap but personal interest
+  other:                    4
+  crypto:                   0
+  web3:                     0
+  adtech:                   1
+  defense:                  0
 
 # --------------------------------------------------------------------
 # Quick company → industry lookup (overrides keyword matching).
 # --------------------------------------------------------------------
 company_industry_map:
-  stripe:       fintech
-  shopify:      saas_b2b
-  hashicorp:    dev_tools
-  vercel:       dev_tools
-  linear:       saas_b2b
-  notion:       saas_b2b
-  supabase:     dev_tools
-  databricks:   data_infra
-  snowflake:    data_infra
-  temporal:     dev_tools
-  planetscale:  data_infra
-  anthropic:    ai_infra
+  nordstrom:       ecommerce
+  chewy:           ecommerce
+  etsy:            ecommerce
+  redfin:          ecommerce
+  expedia:         travel_hospitality
+  amazon:          consumer_mobile
+  tmobile:         consumer_mobile
+  att:             consumer_mobile
+  becu:            digital_banking_fintech
+  warnerbros:      dtc_streaming
+  netflix:         dtc_streaming
+  disney:          dtc_streaming
+  premera:         healthcare_wellness
+  headspace:       healthcare_wellness
+  microsoft:       ai_genai
+  salesforce:      saas_b2b
+  okta:            enterprise_regulated
+  alaskaairlines:  travel_hospitality
+  starbucks:       travel_hospitality
+  blueorigin:      sustainability_mission
+  pge:             energy_utility
 
 # --------------------------------------------------------------------
 # gates — hard filters. If a gate triggers, final score = 0.
 # --------------------------------------------------------------------
 gates:
-  intern_filter:        true   # drop intern / new-grad / junior titles
-  crunch_required:      false  # set true to auto-reject crunch-flagged roles
-  onsite_outside_metro: true   # drop on-site roles outside location.metros
-  clearance_required:   true   # drop roles requiring a security clearance
-  relocation_required:  true   # drop roles requiring relocation
+  intern_filter:           true   # drop intern / new-grad / APM titles
+  domain_disqualifier:     true   # drop web3 / crypto / adtech / defense
+  onsite_outside_metro:    true   # drop on-site roles outside Seattle metro
+  relocation_required:     true   # drop roles requiring relocation
+  clearance_required:      true   # drop roles requiring security clearance
+  pure_management:         false  # soft penalty only; JJ open to hybrid
+                                  # IC+mgmt roles but not management-only
+  pre_series_b:            false  # soft penalty; not a hard gate
 
 # --------------------------------------------------------------------
 # modifiers — score bumps/penalties applied after category math.
 # --------------------------------------------------------------------
 modifiers:
-  tier_s_bonus:        10
-  tier_1_bonus:         6
-  tier_2_bonus:         3
-  passion_dev_tools:    4
-  passion_open_source:  3
-  passion_ai_infra:     3
-  red_flag_crunch:     -8
-  red_flag_ad_tech:    -6
+
+  # Tier bonuses (from companies.yaml)
+  tier_s_bonus:                 10
+  tier_1_bonus:                  6
+  tier_2_bonus:                  3
+  tier_3_bonus:                  1
+
+  # Positive modifiers
+  warm_network_bonus:           10   # direct connection or former employer
+  active_application_bonus:      5   # application already in-flight
+  contract_to_perm_bonus:        4   # explicit conversion potential
+  mission_alignment_bonus:       5   # purpose-driven / sustainability fit
+  passion_ecommerce_bonus:       4   # marketplace / catalog / seller-buyer
+  passion_genai_bonus:           3   # AI/ML product scope
+  passion_maker_bonus:           3   # Etsy-type craft/marketplace identity
+  rfp_vendor_mgmt_bonus:         3   # vendor selection scope in JD
+
+  # Negative modifiers
+  red_flag_crunch:              -8   # crunch culture signals in JD
+  red_flag_management_only:    -10   # no IC product scope whatsoever
+  red_flag_web3_crypto:        -15   # domain disqualifier (soft catch)
+  red_flag_adtech:             -10   # attention economy / data broker
+  red_flag_relocation:         -20   # soft catch before hard gate
+  red_flag_early_stage:         -6   # pre-Series B without PM discipline
+  domain_gap_penalty:           -8   # hard domain req with no direct exp
+  heavy_hybrid_penalty:         -5   # 4+ days/wk in office
+  comp_below_floor_penalty:    -12   # base below $160K FTE walk-away
 
 # --------------------------------------------------------------------
 # tiers — 0-100 score cutoffs for final tier label.
 # --------------------------------------------------------------------
 tiers:
-  T1:   78
-  T2:   65
-  T3:   50
-  T4:    0
+  T1:   78   # Apply immediately — strong fit on all dimensions
+  T2:   65   # Apply — good fit, minor gaps addressable in materials
+  T3:   50   # Consider — meaningful gaps but worth tailoring for
+  T4:    0   # Skip or archive — does not meet core criteria
 
 # --------------------------------------------------------------------
-# tracks — career-story buckets. The prefilter picks one track
-# per job based on company + keywords; the frontend tab strip renders
-# these as top-level navigation.
+# tracks — career-story buckets rendered as top-level navigation.
 # --------------------------------------------------------------------
 tracks:
   TRACK_1_FULLTIME:
-    label: "Primary"
-    description: "Senior/Staff IC roles in your primary target track."
-  TRACK_2_INTERIM:
-    label: "Interim / Contract"
-    description: "Short-term or fractional engagements."
+    label: "Full-Time"
+    description: "Senior/Principal/Director PM roles, FTE."
+    role_types:
+      - principal_pm
+      - senior_pm
+      - director_pm
+      - technical_pm
+      - mobile_pm
+      - ecommerce_pm
+      - platform_pm
+
+  TRACK_2_CONTRACT:
+    label: "Contract / Consulting"
+    description: "W2 contract and consulting PM engagements."
+    role_types:
+      - product_management_contract
+      - technical_pm
+      - product_owner
+    rate_floor_w2:   110   # $/hr hard floor
+
   TRACK_3_PIVOT:
     label: "Pivot / Explore"
-    description: "Adjacent industries the candidate is curious about."
+    description: "Adjacent domains JJ is actively building toward."
     industries:
-      - ai_infra
-      - data_infra
+      - ai_genai
+      - energy_utility
+      - sustainability_mission
+    notes: >
+      GenAI product roles where Reforge certifications are directly
+      relevant. Energy/utility roles where consumer mobile and regulated
+      environment experience is the bridge.
 
 # --------------------------------------------------------------------
 # static_lists — hand-maintained allow/deny lists.
 # --------------------------------------------------------------------
 static_lists:
+
+  # Companies with documented crunch or RTO cultures — apply penalty.
   crunch_companies:
-    # Companies with well-documented crunch cultures (personal call).
-    - "example-crunch-co"
+    - "example-crunch-co"   # replace with actuals as you learn them
+
+  # Companies you will not work for under any circumstances.
+  hard_deny:
+    - "palantir"            # surveillance / defense adjacency
+    - "clearview ai"        # surveillance
+    - "anduril"             # defense contractor
+
+  # Companies that had crunch reputations but reportedly reformed —
+  # apply reduced penalty instead of full.
   crunch_reduced:
-    # Companies that used to have crunch reputations but reportedly
-    # reformed; apply a reduced penalty instead of the full one.
     - "example-reformed-co"
+
+  # Cities / metros where on-site is an automatic hard-no.
   nonlocal_cities:
-    # Metros you cannot / will not work from (on-site there = drop).
-    - "seattle"
+    - "san francisco"
     - "bay area"
     - "los angeles"
+    - "burbank"
+    - "new york"
+    - "new york city"
+    - "nyc"
+    - "brooklyn"
     - "boston"
+    - "chicago"
+    - "austin"
+    - "denver"
+    - "atlanta"
+    - "dallas"
+
+  # Cities / metros where on-site or hybrid is acceptable.
+  commutable_cities:
+    - "seattle"
+    - "bellevue"
+    - "redmond"
+    - "kirkland"
+    - "bothell"
+    - "tukwila"
+    - "mountlake terrace"
+    - "shoreline"
+    - "renton"
+    - "issaquah"
+    - "tacoma"
 
 # --------------------------------------------------------------------
-# semantic — Haiku integration knobs.
+# semantic — Claude integration knobs.
 # --------------------------------------------------------------------
 semantic:
-  enabled:              true
-  model:                "claude-haiku-4-5"
-  max_output_tokens:    800
-  temperature:          0.0
-  cache_ttl_hours:      168   # 7 days
-  rate_limit_rps:       5
-  blend_weight_semantic: 1.0  # Haiku is sole ranker
+  enabled:               true
+  model:                 "claude-haiku-4-5"
+  max_output_tokens:     800
+  temperature:           0.0
+  cache_ttl_hours:       168    # 7 days
+  rate_limit_rps:        5
+  blend_weight_semantic: 1.0   # Claude is sole ranker
   blend_weight_algo:     0.0
 
 # --------------------------------------------------------------------
 # location — geography preferences.
 # --------------------------------------------------------------------
 location:
-  # Labels used in UI + scoring.
   presets:
     remote_us:
       label: "Remote US"
       work_mode: "remote"
-    austin_hybrid:
-      label: "Austin hybrid"
-      metro: "austin"
+    seattle_hybrid_light:
+      label: "Seattle hybrid (≤2 days)"
+      metro: "seattle"
       work_mode: "hybrid"
       max_days_per_week: 2
-  # Metros where on-site is acceptable.
+    seattle_hybrid_moderate:
+      label: "Seattle hybrid (3 days)"
+      metro: "seattle"
+      work_mode: "hybrid"
+      max_days_per_week: 3
+    seattle_hybrid_heavy:
+      label: "Seattle hybrid (4 days)"
+      metro: "seattle"
+      work_mode: "hybrid"
+      max_days_per_week: 4
+      notes: "Acceptable but not preferred — apply hybrid penalty."
+
+  # Metros where on-site or hybrid is acceptable.
   metros:
-    - "austin"
-    - "round rock"
-    - "cedar park"
+    - "seattle"
+    - "bellevue"
+    - "redmond"
+    - "kirkland"
+    - "bothell"
+    - "tukwila"
+    - "mountlake terrace"
+    - "shoreline"
+    - "renton"
+    - "issaquah"
+
+  # Keywords used to detect remote-eligible postings.
   keywords:
-    commutable:
-      - "austin, tx"
-      - "austin metro"
-      - "austin texas"
     remote_us:
       - "remote - us"
       - "remote (us)"
       - "remote usa"
       - "remote-friendly"
       - "us remote"
+      - "100% remote"
+      - "fully remote"
+      - "remote - united states"
+      - "remote - seattle"
+      - "remote - washington"
+    commutable:
+      - "seattle, wa"
+      - "seattle, washington"
+      - "bellevue, wa"
+      - "redmond, wa"
+      - "kirkland, wa"
+      - "bothell, wa"
+      - "tukwila, wa"
+      - "mountlake terrace"
+      - "greater seattle"
+      - "puget sound"
