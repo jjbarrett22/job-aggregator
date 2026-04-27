@@ -65,14 +65,14 @@ companies:
 
  - name: "Salesforce"
    name_normalized: "salesforce"
-   tier: "2"
+   tier: "S"
    ats: workday
    ats_url: "https://www.salesforce.com/company/careers/"
    notes: "Strong SaaS PM background from Premise Data. Target Senior/Principal PM roles in platform, self-service, or customer success product areas."
 
  - name: "Expedia"
    name_normalized: "expedia"
-   tier: "1"
+   tier: "S"
    ats: workday
    ats_url: "https://expedia.wd108.myworkdayjobs.com/"
    notes: "Principal PM Self-Service identified as strong match. Premise Data self-service platform and 80% wait time reduction directly relevant."
@@ -90,7 +90,7 @@ companies:
  
  - name: "Microsoft"
    name_normalized: "microsoft"
-   tier: "S"
+   tier: "1"
    ats: icims
    ats_slug: "microsoft"
    notes: "Principal PM roles across Copilot, consumer mobile, and platform teams. Strong match for mobile/AI product scope."
@@ -118,14 +118,14 @@ companies:
 
   - name: "AT&T"
    name_normalized: "att"
-   tier: "2"
+   tier: "1"
    ats: workday
    ats_url: "https://www.att.jobs"
    notes: "Active application: Senior Tech Product Manager, Bothell WA. SAFe, SDLC, REST API/microservices exposure embedded in resume. Partial tool stack gap (no Azure DevOps, no Adobe Analytics)."
  
  - name: "Alaska Airlines"
    name_normalized: "alaskaairlines"
-   tier: "2"
+   tier: "1"
    ats: icims
    ats_url: "https://careers.alaskaair.com"
    notes: "Seattle HQ. Consumer digital and mobile platform roles. Reliability and eCommerce platform experience from Nordstrom is relevant."
@@ -139,10 +139,27 @@ companies:
  
  - name: "Starbucks"
    name_normalized: "starbucks"
-   tier: "2"
+   tier: "1"
    ats: starbucks
    ats_url: "https://www.starbucks.com/careers"
    notes: "Seattle HQ. Consumer mobile app and loyalty platform scope. Mobile-first and eCommerce experience maps to digital ordering and rewards platform PM roles."
+
+   - name: "Etsy"
+  name_normalized: "etsy"
+  tier: "1"
+  ats: contract
+  ats_url: "https://www.etsy.com/careers"
+  contract_via: "The Mom Project"
+  notes: |
+    Active application: Staff Product Manager, Taxonomy & Catalog (contract W2 via The Mom Project).
+    100% remote, EST schedule, May–December 2026. $98.36/hr W2.
+    Role owns global taxonomy, catalog models, listing creation/enrichment systems, and
+    platform capabilities powering Search, Ads, Recs, and Buyer Experience.
+    Strong personal connection — maker/paper crafter since 2006, followed Etsy tech blog
+    during Nordstrom years. Marketplace experience from Premise Data directly relevant.
+    Key gap to address: structured data/taxonomy/information architecture experience
+    is a hard requirement — frame Premise (demographic data taxonomy across 36 languages)
+    and Nordstrom (eCommerce catalog and product data systems) as directly relevant.
  
  # ======================================================================
  # Tier 2 — Secondary targets
@@ -157,7 +174,7 @@ companies:
  
  - name: "Google"
    name_normalized: "google"
-   tier: "3"
+   tier: "2"
    ats: google
    ats_url: "https://careers.google.com"
    notes: "Large matrixed organization. Target consumer mobile, connectivity, or platform PM roles. Competitive process — prioritize after Tier 1/2."
@@ -168,7 +185,7 @@ companies:
 
   - name: "Premera Blue Cross"
    name_normalized: "premera"
-   tier: "1"
+   tier: "2"
    ats: workday
    ats_url: "https://careers.premera.com"
    notes: "Active application: Capability Product Manager III. Mountlake Terrace HQ — hybrid viable. Regulated environment and enterprise stakeholder experience maps well."
@@ -182,14 +199,14 @@ companies:
 
 - name: "Blue Origin"
    name_normalized: "blueorigin"
-   tier: "3"
+   tier: "2"
    ats: greenhouse
    ats_slug: "blueorigin"
    notes: "Seattle HQ. Principal Technical PM roles identified. Hardware-software systems and regulated environment experience from Amazon Leo is relevant. Mission-driven fit."
 
 - name: "Boeing"
    name_normalized: "boeing"
-   tier: "3"
+   tier: "2"
    ats: workday
    ats_url: "https://jobs.boeing.com"
    notes: "Seattle HQ. Regulated environment and technical PM experience is relevant. Hardware-software systems angle from Amazon Leo could open doors. Mission and culture fit to verify."
