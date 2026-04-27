@@ -1,5 +1,5 @@
 # =====================================================================
-# EXAMPLE taxonomy.yaml — classification axes for the filter UI.
+# taxonomy.yaml — classification axes for the filter UI.
 #
 # Jobs get tagged along three axes:
 #   industry        — what sector the role/company is in (multi-value)
@@ -9,9 +9,6 @@
 #
 # Tagging happens at rescore time. Edits here take effect on the next
 # deploy + rescore. No Python changes required to add/remove industries.
-#
-# Copy this file to `config/taxonomy.yaml` and adjust to your preferences.
-# STRUCTURAL KEYS required by tests: `industries`, `role_types`.
 # =====================================================================
 
 # --------------------------------------------------------------------
@@ -19,223 +16,312 @@
 # --------------------------------------------------------------------
 industries:
 
-  dev_tools:
-    label: "Developer Tools"
+  ecommerce:
+    label: "eCommerce & Marketplace"
     keywords:
-      - "developer tools"
-      - "dev tool"
-      - "developer experience"
-      - "ci/cd"
-      - "build system"
-      - "terraform"
-      - "observability"
-      - "cli tool"
+      - "ecommerce"
+      - "e-commerce"
+      - "online retail"
+      - "marketplace"
+      - "checkout experience"
+      - "purchase funnel"
+      - "seller experience"
+      - "buyer experience"
+      - "catalog"
+      - "taxonomy"
+      - "product listings"
+      - "loyalty platform"
     companies:
-      - "hashicorp"
-      - "vercel"
-      - "supabase"
-      - "linear"
-      - "github"
-      - "gitlab"
-      - "circleci"
-      - "planetscale"
-      - "temporal"
+      - "nordstrom"
+      - "chewy"
+      - "etsy"
+      - "redfin"
+      - "expedia"
+      - "amazon"
+
+  digital_banking_fintech:
+    label: "Digital Banking & Fintech"
+    keywords:
+      - "digital banking"
+      - "mobile banking"
+      - "fintech"
+      - "payments"
+      - "fraud detection"
+      - "fraud ops"
+      - "credit union"
+      - "financial services"
+      - "ledger"
+      - "billing"
+      - "subscription billing"
+    companies:
+      - "becu"
+      - "salesforce"
+
+  dtc_streaming:
+    label: "DTC Streaming & Media"
+    keywords:
+      - "direct to consumer"
+      - "dtc"
+      - "streaming platform"
+      - "digital media"
+      - "subscription"
+      - "content platform"
+      - "video streaming"
+      - "d2c"
+    companies:
+      - "warnerbros"
+      - "netflix"
+      - "disney"
+
+  consumer_mobile:
+    label: "Consumer Mobile & Connectivity"
+    keywords:
+      - "consumer mobile"
+      - "mobile platform"
+      - "mobile-first"
+      - "mobile app"
+      - "ios"
+      - "android"
+      - "connectivity"
+      - "satellite"
+      - "broadband"
+      - "onboarding experience"
+      - "device management"
+    companies:
+      - "amazon"
+      - "tmobile"
+      - "att"
+      - "blueorigin"
+
+  healthcare_wellness:
+    label: "Healthcare & Wellness"
+    keywords:
+      - "digital health"
+      - "healthtech"
+      - "wellness platform"
+      - "mental health"
+      - "pharmacy"
+      - "rx"
+      - "health insurance"
+      - "member experience"
+      - "clinical platform"
+    companies:
+      - "premera"
+      - "chewy"
+      - "headspace"
 
   saas_b2b:
     label: "B2B SaaS"
     keywords:
       - "b2b saas"
       - "enterprise saas"
-      - "business software"
-      - "customer platform"
+      - "self-service platform"
       - "saas platform"
+      - "crowdsourced data"
+      - "data marketplace"
+      - "gig platform"
     companies:
-      - "shopify"
-      - "notion"
-      - "zendesk"
       - "salesforce"
-      - "atlassian"
-      - "asana"
-      - "monday.com"
 
-  fintech:
-    label: "Fintech"
+  sustainability_mission:
+    label: "Sustainability & Mission-Driven"
     keywords:
-      - "fintech"
-      - "payments"
-      - "banking platform"
-      - "neobank"
-      - "lending platform"
-      - "fraud detection"
-      - "ledger system"
+      - "sustainability"
+      - "recycling"
+      - "circular economy"
+      - "climate"
+      - "energy"
+      - "clean energy"
+      - "carbon"
+      - "mission driven"
+      - "b corp"
+      - "people helping people"
     companies:
-      - "stripe"
-      - "plaid"
-      - "mercury"
-      - "brex"
-      - "ramp"
-      - "chime"
+      - "pge"
+      - "becu"
 
-  ai_infra:
-    label: "AI Infrastructure"
+  energy_utility:
+    label: "Energy & Utilities"
     keywords:
-      - "foundation model"
+      - "utility"
+      - "electric utility"
+      - "smart grid"
+      - "distributed energy"
+      - "der"
+      - "ami"
+      - "grid edge"
+      - "energy management"
+      - "consumer energy"
+    companies:
+      - "pge"
+
+  enterprise_regulated:
+    label: "Enterprise & Regulated Environments"
+    keywords:
+      - "regulated industry"
+      - "compliance platform"
+      - "privacy"
+      - "ccpa"
+      - "ada"
+      - "wcag"
+      - "data governance"
+      - "enterprise software"
+      - "identity platform"
+      - "cybersecurity"
+    companies:
+      - "premera"
+      - "becu"
+      - "att"
+      - "okta"
+
+  ai_genai:
+    label: "AI & GenAI Products"
+    keywords:
+      - "generative ai"
+      - "genai"
       - "large language model"
       - "llm"
-      - "model serving"
-      - "inference infrastructure"
-      - "fine-tuning"
+      - "conversational ai"
+      - "ai product"
       - "ml platform"
+      - "ai infrastructure"
+      - "foundation model"
     companies:
-      - "anthropic"
-      - "openai"
-      - "modal"
-      - "replicate"
-      - "baseten"
-      - "together ai"
+      - "microsoft"
+      - "amazon"
 
-  data_infra:
-    label: "Data Infrastructure"
+  travel_hospitality:
+    label: "Travel & Hospitality"
     keywords:
-      - "data platform"
-      - "data warehouse"
-      - "data lake"
-      - "streaming data"
-      - "kafka"
-      - "snowpipe"
+      - "travel platform"
+      - "hospitality"
+      - "booking experience"
+      - "hotel"
+      - "flights"
+      - "loyalty program"
     companies:
-      - "databricks"
-      - "snowflake"
-      - "confluent"
-      - "fivetran"
-      - "dbt labs"
-
-  cloud_infra:
-    label: "Cloud Infrastructure"
-    keywords:
-      - "cloud platform"
-      - "kubernetes"
-      - "container orchestration"
-      - "serverless"
-      - "iaas"
-      - "paas"
-    companies:
-      - "aws"
-      - "amazon web services"
-      - "google cloud"
-      - "microsoft azure"
-      - "cloudflare"
-      - "fastly"
-
-  enterprise:
-    label: "Enterprise"
-    keywords:
-      - "enterprise software"
-      - "compliance platform"
-      - "identity platform"
-      - "iam"
-    companies:
-      - "okta"
-      - "workday"
-      - "servicenow"
-      - "oracle"
-      - "sap"
-
-  healthcare_tech:
-    label: "Healthcare Tech"
-    keywords:
-      - "healthtech"
-      - "digital health"
-      - "clinical platform"
-      - "ehr integration"
-    companies:
-      - "oscar health"
-      - "flatiron health"
-      - "cedar"
+      - "expedia"
+      - "alaskaairlines"
+      - "starbucks"
 
   other:
     label: "Other"
-    keywords: 
-    companies: 
+    keywords:
+    companies:
 
 # --------------------------------------------------------------------
 # role_types — discipline classification.
 # --------------------------------------------------------------------
 role_types:
 
-  backend_engineering:
-    label: "Backend Engineering"
+  principal_pm:
+    label: "Principal / Staff Product Manager"
     keywords:
-      - "backend engineer"
-      - "back-end engineer"
-      - "server-side engineer"
-      - "api engineer"
-      - "go engineer"
-      - "python engineer"
+      - "principal product manager"
+      - "staff product manager"
+      - "senior staff pm"
+      - "group product manager"
+      - "gpm"
 
-  platform_engineering:
-    label: "Platform Engineering"
+  senior_pm:
+    label: "Senior Product Manager"
     keywords:
-      - "platform engineer"
-      - "infrastructure engineer"
-      - "site reliability"
-      - "sre"
-      - "devops engineer"
-      - "developer experience"
+      - "senior product manager"
+      - "sr. product manager"
+      - "sr product manager"
+      - "senior pm"
 
-  distributed_systems:
-    label: "Distributed Systems"
+  director_pm:
+    label: "Director of Product Management"
     keywords:
-      - "distributed systems"
-      - "streaming systems"
-      - "database engineer"
-      - "storage engineer"
+      - "director of product"
+      - "director product management"
+      - "head of product"
+      - "vp of product"
+      - "associate director product"
 
-  frontend_engineering:
-    label: "Frontend Engineering"
+  technical_pm:
+    label: "Technical Product Manager"
     keywords:
-      - "frontend engineer"
-      - "front-end engineer"
-      - "ui engineer"
-      - "react engineer"
+      - "technical product manager"
+      - "pm-t"
+      - "product manager technical"
+      - "senior technical product manager"
+      - "technical pm"
 
-  fullstack_engineering:
-    label: "Fullstack Engineering"
+  product_owner:
+    label: "Product Owner"
     keywords:
-      - "fullstack engineer"
-      - "full stack engineer"
-      - "full-stack engineer"
+      - "product owner"
+      - "senior product owner"
+      - "principal product owner"
+      - "capability product manager"
 
-  mobile_engineering:
-    label: "Mobile Engineering"
+  mobile_pm:
+    label: "Mobile Product Management"
     keywords:
-      - "ios engineer"
-      - "android engineer"
-      - "react native"
-      - "mobile engineer"
+      - "mobile product manager"
+      - "mobile experience"
+      - "mobile platform pm"
+      - "mobile-first product"
+      - "ios product"
+      - "android product"
 
-  data_engineering:
-    label: "Data Engineering"
+  ecommerce_pm:
+    label: "eCommerce Product Management"
     keywords:
-      - "data engineer"
-      - "analytics engineer"
-      - "etl engineer"
+      - "ecommerce product manager"
+      - "checkout product manager"
+      - "purchase experience"
+      - "marketplace product manager"
+      - "catalog product manager"
 
-  ml_engineering:
-    label: "ML Engineering"
+  platform_pm:
+    label: "Platform Product Management"
     keywords:
-      - "machine learning engineer"
-      - "ml engineer"
-      - "applied ml"
-      - "ml platform"
+      - "platform product manager"
+      - "infrastructure product manager"
+      - "core platform pm"
+      - "developer platform"
+      - "api product manager"
 
-  security_engineering:
-    label: "Security Engineering"
+  growth_pm:
+    label: "Growth Product Management"
     keywords:
-      - "security engineer"
-      - "application security"
-      - "appsec"
-      - "product security"
+      - "growth product manager"
+      - "growth pm"
+      - "activation"
+      - "retention product"
+      - "ltv"
+      - "funnel optimization"
+
+  data_analytics_pm:
+    label: "Data & Analytics Product Management"
+    keywords:
+      - "data product manager"
+      - "analytics product manager"
+      - "bi product manager"
+      - "insights product"
+      - "business intelligence pm"
+
+  compliance_privacy_pm:
+    label: "Compliance & Privacy Product Management"
+    keywords:
+      - "compliance product manager"
+      - "privacy product manager"
+      - "data compliance"
+      - "regulatory product"
+      - "trust and safety pm"
+
+  product_management_contract:
+    label: "Contract / Consulting PM"
+    keywords:
+      - "contract product manager"
+      - "consulting product manager"
+      - "fractional pm"
+      - "interim product manager"
+      - "w2 contract"
+      - "contract w2"
 
   engineering_management:
     label: "Engineering Management"
@@ -244,20 +330,7 @@ role_types:
       - "director of engineering"
       - "head of engineering"
       - "vp of engineering"
-
-  product_management:
-    label: "Product Management"
-    keywords:
-      - "product manager"
-      - "principal pm"
-      - "group product manager"
-
-  design:
-    label: "Design"
-    keywords:
-      - "product designer"
-      - "ux designer"
-      - "design engineer"
+    notes: "Hard no — included only to enable automatic low scoring."
 
 # --------------------------------------------------------------------
 # company_groups — curated affinity buckets.
@@ -266,42 +339,91 @@ role_types:
 # --------------------------------------------------------------------
 company_groups:
 
-  dream_culture:
-    label: "Known-good culture"
-    description: "Companies with strong engineering culture + healthy tempo."
+  warm_network:
+    label: "Warm Network Advantage"
+    description: "Companies where JJ has a direct personal connection or former employer advantage."
     companies:
-      - "stripe"
-      - "anthropic"
-      - "hashicorp"
-      - "vercel"
-      - "linear"
+      - "nordstrom"
+      - "warnerbros"
+      - "becu"
+      - "microsoft"
 
-  fintech_targets:
-    label: "Fintech"
-    description: "Fintech infrastructure you'd consider."
+  seattle_hybrid_viable:
+    label: "Seattle Hybrid Viable"
+    description: "Companies with Seattle-area offices where hybrid commute is practical."
     companies:
-      - "stripe"
-      - "plaid"
-      - "mercury"
+      - "becu"
+      - "nordstrom"
+      - "redfin"
+      - "tmobile"
+      - "premera"
+      - "chewy"
+      - "expedia"
+      - "alaskaairlines"
+      - "starbucks"
+      - "blueorigin"
+      - "microsoft"
+      - "amazon"
 
-  dev_tools_bucket:
-    label: "Dev Tools"
-    description: "Developer tooling + CI/CD platforms."
+  ecommerce_core:
+    label: "eCommerce Core"
+    description: "Companies where eCommerce and purchase experience is central to the business."
     companies:
-      - "hashicorp"
-      - "vercel"
-      - "supabase"
-      - "linear"
-      - "temporal"
-      - "planetscale"
+      - "nordstrom"
+      - "chewy"
+      - "etsy"
+      - "redfin"
+      - "expedia"
+      - "amazon"
+
+  mission_aligned:
+    label: "Mission-Aligned"
+    description: "Purpose-driven companies that align with JJ's values around sustainability, access, and member-first culture."
+    companies:
+      - "becu"
+      - "headspace"
+      - "pge"
+
+  contract_targets:
+    label: "Contract Targets"
+    description: "Companies actively hiring PM contractors or where contract-to-perm is viable."
+    companies:
+      - "amazon"
+      - "etsy"
+      - "pge"
+      - "microsoft"
+
+  active_applications:
+    label: "Active Applications"
+    description: "Companies with applications currently in-flight."
+    companies:
+      - "becu"
+      - "chewy"
+      - "warnerbros"
+      - "premera"
+      - "att"
+      - "pge"
+      - "etsy"
+      - "headspace"
 
 # --------------------------------------------------------------------
 # qol — quality-of-life weights applied by the QoL scorer.
 # --------------------------------------------------------------------
 qol:
-  salary_floor:        180000  # roles below this get a hard QoL drop
-  work_mode_remote:    25       # remote preferred for Alex
-  work_mode_hybrid:    18
-  work_mode_onsite:     5
-  crunch_penalty:      20
+  salary_floor:               175000  # hard walk-away threshold for FTE
+  contract_rate_floor_w2:      79     # hard walk-away for W2 contract ($/hr)
+  work_mode_remote:             8     # 
+  work_mode_hybrid_light:      20     # ≤2 days/wk in Seattle metro
+  work_mode_hybrid_moderate:   14     # 3 days/wk in Seattle metro
+  work_mode_hybrid_heavy:      20      # 4+ days/wk
+  work_mode_onsite_seattle:    20     # on-site Seattle only — possible stretch
+  work_mode_onsite_other:       0     # on-site outside Seattle metro — hard no
+  crunch_penalty:              22     # "move fast and break things" culture signals
+  relocation_penalty:          50     # any role requiring relocation outside Seattle
+  management_only_penalty:      6     # pure people management with no IC product scope
+  early_stage_penalty:         12     # pre-Series B without established PM discipline
+  domain_gap_penalty:          10     # hard domain requirement with no direct experience
+  warm_network_bonus:          10     # direct personal connection or former employer
+  mission_alignment_bonus:     20     # purpose-driven company matching stated values
+  contract_to_perm_bonus:      16     # explicit conversion potential noted in posting
   commute_distance_penalty_per_mile: 0.5
